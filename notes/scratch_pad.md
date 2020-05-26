@@ -1,3 +1,5 @@
+### ____________ REMEMBER FIRST PASS THEN OPTIMIZE/REFLECT ______________ ###
+
 ## mindmap todo
 
     - Investigate Conway's Game of life
@@ -13,8 +15,13 @@
             - Each cell has potentially up to 8 neighbors to account for.
             - How to handle cells at the border? Count the non existent neighbors as perma-dead cells in the algo?
 
+### ____________ REMEMBER FIRST PASS THEN OPTIMIZE/REFLECT ______________ ###
+
 ## TODO ORDER V#1
     - create a grid
     - make grid boxes interactive/stateful
     - THEN dig more into the Game Of Life
     - Reasses once I have more of a foundation to plan on.
+
+### ____________ REMEMBER FIRST PASS THEN OPTIMIZE/REFLECT ______________ ###
+

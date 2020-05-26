@@ -1,34 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 
+
 import GridBox from './grid_box.js';
 
-const Grid = () => {
-    // first step is to render a 50x50 grid
-    const rowLen = 50; // will eventually set to redux state, for variable presets
-    const colLen = 50; // will eventually set to redux state, for variable presets
-
-    const boxes = [];
-   
-    // O(n^c) runtime
-    for(let r = 1; r <= rowLen; r++) {
-        for(let c = 1; c <= colLen; c++){
-            // initiating an array of cell potiions
-            boxes.push({
-                row: r,
-                col: c
-            });
-        }
-    }
+const Grid = (props) => {
     
-
+    
     return(
         // grid container
-        <GridContainer colLen={colLen}>
-            {boxes.map(box => {
+        <GridContainer rows={props.rows} columns={props.columns}>
+            {props.grid.map(box => {
                 return <GridBox 
                     key={`row: ${box.row}, col: ${box.col}`}
                     position={`row: ${box.row}, col: ${box.col}`}
+                    active={box.active}
                 />
             })}
         </GridContainer>
@@ -36,11 +22,16 @@ const Grid = () => {
     )
 };
 
+
+
 export default Grid
 
-const GridContainer = styled.div`
-    width: 500px;
-    height: 500px;
+const GridContainer = styled.div.attrs(props => ({
+        rows: props.rows * 12,
+        columns: props.columns * 12
+    }))`
+    width: ${props => props.rows}px;
+    height: ${props => props.columns}px;
     margin: 30px auto;
     background-color: lightgrey;
     display: flex;

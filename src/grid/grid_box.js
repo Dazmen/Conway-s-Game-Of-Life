@@ -2,11 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 
 const GridBox = (props) => {
+    
+
 
     return (
         <Box 
             onClick={() => {
                 console.log(props.position)
+               
             }}
         />
     )
@@ -14,12 +17,13 @@ const GridBox = (props) => {
 
 export default GridBox;
 
+
 const Box = styled.div`
     box-sizing: border-box;
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     border: 1px solid black;
-    :hover {
+    &:hover {
         background-color: white;
     }
 `;

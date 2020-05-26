@@ -1,12 +1,12 @@
 import React from 'react';
 
-import Grid from './grid/grid.js';
+import GridPage from './grid/gridPage.js';
 
 
 function App() {
   return (
     <div className="App">
-      <Grid />
+      <GridPage />
     </div>
   );
 }
