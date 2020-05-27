@@ -1,4 +1,5 @@
-import { INITIATE_GRID } from '../actions/gridActions.js';
+import { INITIATE_GRID,
+    TOGGLE_CURRENT_ACTIVE_CELLS } from '../actions/gridActions.js';
 
 const initialState = {
     current_grid_gen: [],
@@ -18,7 +19,11 @@ const gridReducer = (state = initialState, action) => {
                 columns: action.payload.columns,
                 current_grid_gen: action.payload.grid
             }
-
+        case TOGGLE_CURRENT_ACTIVE_CELLS:
+            return {
+                ...state,
+                current_grid_gen: action.payload
+            }
         default:
             return state
     }

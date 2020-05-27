@@ -1,4 +1,14 @@
 export const INITIATE_GRID = "INITIATE_GRID"
+export const TOGGLE_CURRENT_ACTIVE_CELLS = "TOGGLE_CURRENT_ACTIVE_CELLS";
+
+export function toggleActive(currentGrid, index){
+    const newGrid = currentGrid;
+    newGrid[index].active = !newGrid[index].active;
+    return {
+        type: TOGGLE_CURRENT_ACTIVE_CELLS,
+        payload: newGrid
+    }
+}
 
 export function initiateGrid(rows, columns){
     const rowLen = rows > 0 ? rows : 50; 
